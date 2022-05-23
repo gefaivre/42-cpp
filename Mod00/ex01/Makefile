@@ -15,7 +15,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ) PhoneBook.hpp
+$(NAME): $(OBJ) PhoneBook.class.hpp Contact.class.hpp 
 	${CC} $(CFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 

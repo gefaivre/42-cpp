@@ -1,25 +1,25 @@
-#ifndef CLASS_CONTACT_H
-#define CLASS_CONTACT_H
-#include "PhoneBook.hpp"
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
+#include <iostream>
+#include <string>
 
 class Contact{
 
 	public:
-	int getIndex( void );
+		int getIndex( void );
 	
-	Contact( int idx );
-	Contact( void );
-	~Contact( void );
+		Contact( void );
+		~Contact( void );
 
 
 	private:
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
+		std::string firstName;
+		std::string lastName;
+		std::string nickname;
+		std::string phoneNumber;
+		std::string darkestSecret;
 
-	int index;
+		int index;
 
 
 };

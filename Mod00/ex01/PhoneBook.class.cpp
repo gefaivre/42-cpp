@@ -1,4 +1,7 @@
-#include "PhoneBook.hpp"
+#include <iostream>
+#include <string>
+#include "Contact.class.hpp"
+#include "PhoneBook.class.hpp"
 
 PhoneBook::PhoneBook( void ){
 
@@ -11,12 +14,3 @@ PhoneBook::~PhoneBook( void ){
 }
 
 
-
-void PhoneBook::addContact( void ){
-
-	std::cout << "Size = " << contactsSize << std::endl;
-	
-	Contact contact(contactsSize);
-	this->contacts[contactsSize] = contact;
-	contactsSize++;
-}
