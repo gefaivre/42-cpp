@@ -1,15 +1,13 @@
-#include "test.hpp"
 #include <iostream>
+#include "PhoneBook.hpp"
 
 int main(){
-	Test coucou;
+	
+	PhoneBook phoneBook;
 
-	coucou.foo = 42;
-
-	std::cout << "coucou.foo" << std::endl;
-
-	coucou.bar();
+	phoneBook.addContact();
+	phoneBook.addContact();
 
 
-
+	return (0);
 }

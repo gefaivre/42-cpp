@@ -1,7 +1,8 @@
 NAME= phonebook
 
 SRC=	main.cpp \
-		test.cpp
+		Contact.class.cpp \
+		PhoneBook.class.cpp
 
 CC=g++
 
@@ -14,7 +15,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ) test.hpp
+$(NAME): $(OBJ) PhoneBook.hpp
 	${CC} $(CFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
