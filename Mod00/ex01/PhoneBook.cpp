@@ -5,15 +5,13 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook( void ){
-
-	std::cout << "PHONEBOOK constructor called" << std::endl;
 	this->contactsNbr = 0;
 	this->oldestContacts = -1;
 }
 
 PhoneBook::~PhoneBook( void ){
-	std::cout << "PHONEBOOK destructor called" << std::endl;
 }
+
 void PhoneBook::printInfo( std::string info ){
 
 	if (info.size() > 9)
@@ -55,18 +53,16 @@ void PhoneBook::searchContact( void ){
 	while (1)
 	{
 		std::getline(std::cin, cinIndex);
-		std::stringstream ssCinIndex(cinIndex);
+		std::istringstream ssCinIndex(cinIndex);
 		int intCinIndex;
 		ssCinIndex >> intCinIndex;
-		std::cout << ssCinIndex << std::endl;
-		if (intCinIndex >= 0 && intCinIndex < contactsNbr)
+		if (intCinIndex >= 0 && intCinIndex < contactsNbr && !ssCinIndex.fail() )
 		{
 			PhoneBook::printContact(intCinIndex);
 			break;
 		}
 		else
 			std::cout << "Bad index, retry :";
-
 	}
 
 }
