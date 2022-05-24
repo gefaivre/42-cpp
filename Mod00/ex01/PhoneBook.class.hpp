@@ -12,11 +12,15 @@ class PhoneBook{
 		PhoneBook( void );
 		~PhoneBook( void );
 
+		void addContact(void);
 		void searchContact(void);
 
 	private:
 		Contact contacts[8];
-		int contactsSize;
+		void readInfo( void );
+		int contactsNbr;
+		int oldestContacts;
+		
 
 
 };

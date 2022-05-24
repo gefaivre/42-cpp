@@ -6,24 +6,16 @@
 int main( void ){
 	
 	PhoneBook phoneBook;
-	std::string test;
-
+	std::string line;
 	while (1)
 	{
-		std::getline(std::cin, test);
-		if (test.compare("SEARCH") == 0)
-		{
-			std::cout << "coucou" << std::endl;
-		}
-		else if (test.compare("ADD") == 0)
-		{
-			std::cout << "bien vu tu add" << std::endl;
-		}
-		else if (test.compare("EXIT") == 0)
-		{
-			std::cout << "Exit" << std::endl;
+		std::getline(std::cin, line);
+		if (line.compare("ADD") == 0)
+			phoneBook.addContact();
+		else if (line.compare("SEARCH") == 0)
+			phoneBook.searchContact();
+		else if (line.compare("EXIT") == 0)
 			break;
-		}
 	}
 	return (0);
 }
