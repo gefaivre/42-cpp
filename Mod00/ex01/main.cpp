@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 
 
 int main( void ){
