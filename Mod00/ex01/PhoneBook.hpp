@@ -17,7 +17,8 @@ class PhoneBook{
 
 	private:
 		Contact contacts[8];
-		void readInfo( void );
+		void printInfo( std::string info );
+		void printContact(int index);
 		int contactsNbr;
 		int oldestContacts;
 		

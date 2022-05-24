@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -13,59 +14,96 @@ PhoneBook::PhoneBook( void ){
 PhoneBook::~PhoneBook( void ){
 	std::cout << "PHONEBOOK destructor called" << std::endl;
 }
+void PhoneBook::printInfo( std::string info ){
 
-void PhoneBook::readInfo( void ){
-	oldestContacts++;
-	std::string line;
-
-	std::cout << "Firstname : ";
-	std::getline(std::cin, line);
-	this->contacts[contactsNbr].firstName = line;
-
-	std::cout << "LastName : ";
-	std::getline(std::cin, line);
-	this->contacts[contactsNbr].lastName = line;
-	
-	std::cout << "Nickname : ";
-	std::getline(std::cin, line);
-	this->contacts[contactsNbr].nickname = line;
-
-	std::cout << "PhoneNumber : ";
-	std::getline(std::cin, line);
-	this->contacts[contactsNbr].phoneNumber = line;
-
-	std::cout << "DarkestSecret : ";
-	std::getline(std::cin, line);
-	this->contacts[contactsNbr].darkestSecret = line;
+	if (info.size() > 9)
+		std::cout << info.substr(0, 9) << ".";
+	else
+	{
+		for (int y = 0; y + info.size() < 10; y++)
+			std::cout << " ";
+		std::cout << info;
+	}
+}
 
 
-	this->contacts[contactsNbr].index = oldestContacts;
-	contactsNbr++;
-
-	std::cout << "Contact setup" << std::endl;
+void PhoneBook::printContact(int index)
+{
+	std::cout << "Firstname      : " << this->contacts[index].firstName << std::endl;
+	std::cout << "Lastname       : " << this->contacts[index].lastName << std::endl;
+	std::cout << "Nickname       : " << this->contacts[index].nickname << std::endl;
+	std::cout << "Phonenumber    : " << this->contacts[index].phoneNumber << std::endl;
+	std::cout << "Darkest Secret : " << this->contacts[index].darkestSecret << std::endl;
 }
 
 void PhoneBook::searchContact( void ){
+	std::string cinIndex;
 	for (int i = 0; i < this->contactsNbr; i++)
 	{
-		std::cout << this->contacts[i].index << " | ";
-		std::cout << this->contacts[i].firstName << " | ";
-		std::cout << this->contacts[i].lastName << " | ";
-		std::cout << this->contacts[i].nickname << " | ";
-		std::cout << this->contacts[i].phoneNumber << " | ";
-		std::cout << this->contacts[i].darkestSecret << std::endl;
+		std::cout << this->contacts[i].index << "|";
+		PhoneBook::printInfo(this->contacts[i].firstName);
+		std::cout << "|";
+		PhoneBook::printInfo(this->contacts[i].lastName);
+		std::cout << "|";
+		PhoneBook::printInfo(this->contacts[i].nickname);
+		std::cout << "|";
+		PhoneBook::printInfo(this->contacts[i].phoneNumber);
+		std::cout << "|";
+		PhoneBook::printInfo(this->contacts[i].darkestSecret);
+		std::cout << std::endl;
 	}
+	while (1)
+	{
+		std::getline(std::cin, cinIndex);
+		std::stringstream ssCinIndex(cinIndex);
+		int intCinIndex;
+		ssCinIndex >> intCinIndex;
+		std::cout << ssCinIndex << std::endl;
+		if (intCinIndex >= 0 && intCinIndex < contactsNbr)
+		{
+			PhoneBook::printContact(intCinIndex);
+			break;
+		}
+		else
+			std::cout << "Bad index, retry :";
+
+	}
+
 }
 
 void PhoneBook::addContact( void ){
-	if (contactsNbr < 7)
-	{
-		readInfo();
-	}
+	int index = 0;
+	oldestContacts++;
+	if (contactsNbr < 8)
+		index = contactsNbr;
 	else
-	{
-		return;
-	}
+		index = oldestContacts % 8;
+	
+
+
+
+	std::string line;
+	std::cout << "Firstname : ";
+	std::getline(std::cin, line);
+	this->contacts[index].firstName = line;
+	std::cout << "LastName : ";
+	std::getline(std::cin, line);
+	this->contacts[index].lastName = line;
+	std::cout << "Nickname : ";
+	std::getline(std::cin, line);
+	this->contacts[index].nickname = line;
+	std::cout << "PhoneNumber : ";
+	std::getline(std::cin, line);
+	this->contacts[index].phoneNumber = line;
+	std::cout << "DarkestSecret : ";
+	std::getline(std::cin, line);
+	this->contacts[index].darkestSecret = line;
+
+	this->contacts[index].index = oldestContacts % 8;
+	if (contactsNbr < 8)
+		contactsNbr++;
+
+	std::cout << "Contact setup" << std::endl;
 }
 
 
