@@ -1,8 +1,6 @@
-NAME= zombie
+NAME= brain
 
-SRC=	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp
+SRC=	main.cpp 
 
 CC=g++
 
@@ -15,7 +13,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ) Zombie.hpp
+$(NAME): $(OBJ)
 	${CC} $(CFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
