@@ -4,11 +4,9 @@
 #include <string>
 #include "Contact.hpp"
 
-
 class PhoneBook{
 
 	public:
-
 		PhoneBook( void );
 		~PhoneBook( void );
 
@@ -21,9 +19,6 @@ class PhoneBook{
 		void printContact(int index);
 		int contactsNbr;
 		int oldestContacts;
-		
-
-
 };
 
 #endif

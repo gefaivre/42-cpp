@@ -1,13 +1,13 @@
 #include <iostream>
-#include <cctype>
-#include <string.h>
 #include <bits/stdc++.h>
-
-
 
 int main(int ac, char **av)
 {
-	(void)ac;
+	if (ac == 1)
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * " << std::endl;
+		return (0);
+	}
 	for (int i = 1; av[i]; i++)
 	{
 		int n = sizeof(av[i]);

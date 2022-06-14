@@ -24,7 +24,6 @@ void PhoneBook::printInfo( std::string info ){
 	}
 }
 
-
 void PhoneBook::printContact(int index)
 {
 	std::cout << "Firstname      : " << this->contacts[index].firstName << std::endl;
@@ -52,6 +51,7 @@ void PhoneBook::searchContact( void ){
 	}
 	while (1)
 	{
+		std::cout << "Enter an index:" << std::endl;
 		std::getline(std::cin, cinIndex);
 		std::istringstream ssCinIndex(cinIndex);
 		int intCinIndex;
@@ -62,9 +62,8 @@ void PhoneBook::searchContact( void ){
 			break;
 		}
 		else
-			std::cout << "Bad index, retry :";
+			std::cout << "Bad index, retry :" << std::endl;
 	}
-
 }
 
 void PhoneBook::addContact( void ){
@@ -75,9 +74,6 @@ void PhoneBook::addContact( void ){
 	else
 		index = oldestContacts % 8;
 	
-
-
-
 	std::string line;
 	std::cout << "Firstname : ";
 	std::getline(std::cin, line);
@@ -98,8 +94,5 @@ void PhoneBook::addContact( void ){
 	this->contacts[index].index = oldestContacts % 8;
 	if (contactsNbr < 8)
 		contactsNbr++;
-
-	std::cout << "Contact setup" << std::endl;
+	std::cout << std::endl << "Contact setup" << std::endl;
 }
-
-
