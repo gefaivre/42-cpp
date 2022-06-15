@@ -3,6 +3,7 @@
 #include <sstream>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include "ft_getline.hpp"
 
 PhoneBook::PhoneBook( void ){
 	this->contactsNbr = 0;
@@ -33,8 +34,14 @@ void PhoneBook::printContact(int index)
 	std::cout << "Darkest Secret : " << this->contacts[index].darkestSecret << std::endl;
 }
 
+
 void PhoneBook::searchContact( void ){
 	std::string cinIndex;
+	if (contactsNbr == 0){
+		std::cout << std::endl << "No contact, please add one" << std::endl;
+		return;
+	}
+
 	for (int i = 0; i < this->contactsNbr; i++)
 	{
 		std::cout << this->contacts[i].index << "|";
@@ -52,7 +59,7 @@ void PhoneBook::searchContact( void ){
 	while (1)
 	{
 		std::cout << "Enter an index:" << std::endl;
-		std::getline(std::cin, cinIndex);
+		ft_getline(&cinIndex);
 		std::istringstream ssCinIndex(cinIndex);
 		int intCinIndex;
 		ssCinIndex >> intCinIndex;
@@ -66,29 +73,31 @@ void PhoneBook::searchContact( void ){
 	}
 }
 
+
+
 void PhoneBook::addContact( void ){
 	int index = 0;
+	std::string line;
 	oldestContacts++;
 	if (contactsNbr < 8)
 		index = contactsNbr;
 	else
 		index = oldestContacts % 8;
 	
-	std::string line;
 	std::cout << "Firstname : ";
-	std::getline(std::cin, line);
+	ft_getline(&line);
 	this->contacts[index].firstName = line;
 	std::cout << "LastName : ";
-	std::getline(std::cin, line);
+	ft_getline(&line);
 	this->contacts[index].lastName = line;
 	std::cout << "Nickname : ";
-	std::getline(std::cin, line);
+	ft_getline(&line);
 	this->contacts[index].nickname = line;
 	std::cout << "PhoneNumber : ";
-	std::getline(std::cin, line);
+	ft_getline(&line);
 	this->contacts[index].phoneNumber = line;
 	std::cout << "DarkestSecret : ";
-	std::getline(std::cin, line);
+	ft_getline(&line);
 	this->contacts[index].darkestSecret = line;
 
 	this->contacts[index].index = oldestContacts % 8;
