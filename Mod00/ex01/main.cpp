@@ -22,6 +22,7 @@ int main( void ){
 	
 	PhoneBook	phoneBook;
 	std::string	line;
+	
 	welcom();
 	while (1){
 		command();
