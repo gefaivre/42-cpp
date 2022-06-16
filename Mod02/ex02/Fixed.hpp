@@ -1,5 +1,7 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
+#include <ostream>
+
 class Fixed{
 
 public:
@@ -22,6 +24,7 @@ private:
 
 };
 
+std::ostream &operator<<( std::ostream &os, const Fixed &other );
 
 
 
