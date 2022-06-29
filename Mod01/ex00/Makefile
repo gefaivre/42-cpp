@@ -5,19 +5,19 @@ SRC=	main.cpp \
 		newZombie.cpp \
 		randomChump.cpp
 
-CC=g++
+CXX=g++
 
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 
 OBJ=$(SRC:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS)  -o $@ -c $<
+	@$(CXX) $(CXXFLAGS)  -o $@ -c $<
 	
 all: $(NAME)
 
 $(NAME): $(OBJ) Zombie.hpp
-	${CC} $(CFLAGS) -o $(NAME) $(OBJ)
+	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
 

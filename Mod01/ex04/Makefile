@@ -1,19 +1,19 @@
 NAME= replace
 
 SRC=	main.cpp
-CC=g++
+CXX=g++
 
-CFLAGS= -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
 
 OBJ=$(SRC:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS)  -o $@ -c $<
+	@$(CXX) $(CXXFLAGS)  -o $@ -c $<
 	
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	${CC} $(CFLAGS) -o $(NAME) $(OBJ)
+	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
 

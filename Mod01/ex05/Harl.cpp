@@ -22,7 +22,7 @@ void	Harl::error( void ){
 void Harl::complain( std::string level ){
 
 	std::string wordlist[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void	(Harl::*call[])( void ) = {
+	void (Harl::*call[]) () = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
@@ -31,7 +31,7 @@ void Harl::complain( std::string level ){
 
 	for (int i = 0; i < 4; i++)
 	{
-		void (Harl::*selectedComplaint)( void ) = call[i];
+		void (Harl::*selectedComplaint) () = call[i];
 		if (level == wordlist[i])
 			(this->*selectedComplaint)();
 	}

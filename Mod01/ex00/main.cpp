@@ -8,20 +8,15 @@ Zombie* randomChump( std::string name );
 
 int main()
 {
-    std::cout << "create normal" << std::endl;
+    std::cout << "-----normal create" << std::endl;
     Zombie test0( "test0" );
     test0.announce();
 
-    std::cout << "create with fonction" << std::endl;
+    std::cout << "-----create with new" << std::endl;
     Zombie *test1 = newZombie( "test1" );
     test1->announce();
     delete(test1);
 
-    std::cout << "create with randomChump" << std::endl;
+    std::cout << "-----create with randomChump" << std::endl;
     randomChump( "test3" );
-
-
-
-
-
 }
