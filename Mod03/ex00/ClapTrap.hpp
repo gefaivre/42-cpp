@@ -15,20 +15,20 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-	std::string getName()const;
-	int getHitPoints()const;
-	int getEnergyPoints()const;
-	int getAttackDamage()const;
-
-
+	std::string getName() const;
+	int getHitPoints() const;
+	void setHitPoints( int );
+	int getEnergyPoints() const;
+	void setEnergyPoints( int );
+	int getAttackDamage() const;
+	void setAttackDamage( int );
 
 private:
 
 	std::string name;
-	int hitPoints = 10;
-	int energyPoints = 10;
-	int attackDamage = 0;
-
+	int hitPoints;
+	int energyPoints;
+	int attackDamage ;
 
 };
 
