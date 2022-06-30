@@ -12,6 +12,6 @@ int main()
     std::cout << "Address of stringREF: " << &stringREF << std::endl << std::endl;
 
     std::cout << "VALUE of string: " << string << std::endl;
-    std::cout << "VALUE of stringPTR: " << stringPTR << std::endl;
+    std::cout << "VALUE of stringPTR: " << *stringPTR << std::endl;
     std::cout << "VALUE of stringREF: " << stringREF << std::endl;
 }
