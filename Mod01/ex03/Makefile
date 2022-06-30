@@ -5,7 +5,7 @@ SRC=	main.cpp \
 		HumanA.cpp \
 		HumanB.cpp
 
-CXX=g++
+CXX=c++
 
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 
