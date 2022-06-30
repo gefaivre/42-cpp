@@ -33,10 +33,6 @@ public:
 	static const Fixed	&min(Fixed const &a, Fixed const &b);
 	static Fixed		&max(Fixed &a, Fixed &b);
 	static const Fixed	&max(Fixed const &a, Fixed const &b);
-
-
-
-
 	
 	float toFloat( void ) const;
 	int toInt( void ) const;

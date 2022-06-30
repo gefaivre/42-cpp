@@ -27,7 +27,6 @@ Fixed::~Fixed( void ){
 	std::cout << "Default destructor called" << std::endl;
 }
 
-
 Fixed & Fixed::operator=( const Fixed &other ){
 	std::cout << "Copy assignment operator called" << std::endl;
 	fixed = other.getRawBits();
@@ -54,4 +53,4 @@ float Fixed::toFloat( void ) const {
 std::ostream	&operator<<( std::ostream &os, const Fixed &other ){
 	os << other.toFloat();
 	return (os);
-} 
+}
