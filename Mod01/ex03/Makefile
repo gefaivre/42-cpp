@@ -1,4 +1,4 @@
-NAME= brain
+NAME= ex04
 
 SRC=	main.cpp \
 		Weapon.cpp \

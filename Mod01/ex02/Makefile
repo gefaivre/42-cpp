@@ -1,4 +1,4 @@
-NAME= brain
+NAME= ex02
 
 SRC=	main.cpp 
 

@@ -1,4 +1,4 @@
-NAME= harl
+NAME= ex05
 
 SRC=	main.cpp \
 		Harl.cpp
