@@ -22,3 +22,12 @@ void Zombie::announce( void )
 {
     std::cout << this->name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
+Zombie* Zombie::getNext( void )
+{
+	return( this->next );
+}
+void	Zombie::setNext( Zombie* zonzon )
+{
+	this->next = zonzon;
+}

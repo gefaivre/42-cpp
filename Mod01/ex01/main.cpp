@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-Zombie* zombieHorde( int N, std::string name );
-
 int main()
 {
     Zombie *horde = NULL;
@@ -14,15 +12,14 @@ int main()
     while (mover != NULL)
     {
         mover->announce();
-        mover = mover->next;
+        mover = mover->getNext();
     }
     mover = horde;
     while (mover != NULL)
     {
         Zombie *deleteThis = mover;
-        mover = mover->next;
+        mover = mover->getNext();
         delete(deleteThis);
     }
-
     return(0);
 }

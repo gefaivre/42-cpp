@@ -10,12 +10,16 @@ public:
 	~Zombie( void );
 	void	announce( void );
 	Zombie* newZombie( std::string name );
+	Zombie* getNext();
+	void	setNext(Zombie *zonzon);
 
-	Zombie *next;
 
 private:
+	Zombie *next;
 	std::string name;
 
 };
+
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
