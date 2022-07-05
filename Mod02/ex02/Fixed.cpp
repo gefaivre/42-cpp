@@ -25,8 +25,8 @@ Fixed::Fixed(const Fixed &p)
 
 Fixed::~Fixed( void )
 {
-}
 
+}
 
 Fixed & Fixed::operator=( const Fixed &other )
 {
@@ -84,30 +84,27 @@ bool Fixed::operator!=( const Fixed &other ) const
 
 Fixed	Fixed::operator+( const Fixed &other ) const
 {
-	Fixed f;
-	f = this->getRawBits() + other.getRawBits();
-	return (f);
+
+	return (this->toFloat() + other.toFloat());
 }
 
 Fixed	Fixed::operator-( const Fixed &other ) const
 {
 	Fixed f;
-	f = this->getRawBits() - other.getRawBits();
+	f = this->toFloat() - other.toFloat();
 	return (f);
 }
 
 Fixed	Fixed::operator*( const Fixed &other ) const
 {
 	Fixed f;
-	f = this->getRawBits() * other.getRawBits();
+	f = this->toFloat() * other.toFloat();
 	return (f);
 }
 
 Fixed	Fixed::operator/( const Fixed &other ) const
 {
-	Fixed f;
-	f = this->getRawBits() / other.getRawBits();
-	return (f);
+	return (this->toFloat() / other.toFloat());
 }
 
 Fixed	&Fixed::operator++( void )

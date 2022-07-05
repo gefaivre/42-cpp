@@ -5,6 +5,10 @@
 class Fixed
 {
 
+private:
+	int fixed;
+	const static int fract = 8;
+
 public:
 	Fixed( void );
 	Fixed(const Fixed &p);
@@ -19,14 +23,8 @@ public:
 	int getRawBits( void ) const ;
 	void setRawBits( int const raw );
 
-private:
-	int fixed;
-	const static int fract = 8; 
-
 };
 
 std::ostream &operator<<( std::ostream &os, const Fixed &other );
-
-
 
 #endif

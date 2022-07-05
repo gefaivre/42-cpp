@@ -4,6 +4,10 @@
 class Fixed
 {
 
+private:
+	int fixed;
+	const static int fract = 8; 
+
 public:
 	Fixed( void );
 	~Fixed( void );
@@ -13,10 +17,6 @@ public:
 	
 	int getRawBits( void ) const ;
 	void setRawBits( int const raw );
-
-private:
-	int fixed;
-	const static int fract = 8; 
 
 };
 

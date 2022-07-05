@@ -17,9 +17,9 @@ Fixed::Fixed(const Fixed &p)
 	*this = p;
 }
 
-Fixed & Fixed::operator=( const Fixed &other )
+Fixed & Fixed::operator=( const Fixed &ref )
 {
-	fixed = other.getRawBits();
+	fixed = ref.getRawBits();
     return *this;
 }
 	

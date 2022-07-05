@@ -32,10 +32,9 @@ Fixed::~Fixed( void )
 	std::cout << "Default destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=( const Fixed &other )
+Fixed & Fixed::operator=( const Fixed &ref )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-	fixed = other.getRawBits();
+	fixed = ref.getRawBits();
 	return *this;
 }
 	
