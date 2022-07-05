@@ -1,7 +1,8 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-class Fixed{
+class Fixed
+{
 
 public:
 	Fixed( void );
@@ -18,8 +19,5 @@ private:
 	const static int fract = 8; 
 
 };
-
-
-
 
 #endif
