@@ -1,7 +1,9 @@
-NAME= ex00
+NAME= ex01
 
 SRC=	main.cpp \
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
+
 CXX=c++
 
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
@@ -10,7 +12,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ)  ClapTrap.hpp
+$(NAME): $(OBJ)  ClapTrap.hpp ScavTrap.hpp
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 

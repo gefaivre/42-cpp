@@ -24,11 +24,13 @@ public:
 	int getAttackDamage() const;
 	void setAttackDamage(int);
 
-private:
+protected:
 	std::string name;
 	int hitPoints;
 	int energyPoints;
 	int attackDamage;
+
+	ClapTrap(void);
 };
 
 #endif

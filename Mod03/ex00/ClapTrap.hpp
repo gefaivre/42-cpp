@@ -29,6 +29,8 @@ private:
 	int hitPoints;
 	int energyPoints;
 	int attackDamage;
+	
+	ClapTrap(void);
 };
 
 #endif

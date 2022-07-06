@@ -1,9 +1,14 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "ClapTrap Default Constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor called" << std::endl;
 	this->name = name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -12,13 +17,13 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &p)
 {
-	std::cout << "Copy constructeur colled" << std::endl;
+	std::cout << "ClapTrap Copy constructeur called" << std::endl;
 	*this = p;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "ClapTrap Default destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
@@ -96,7 +101,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (getEnergyPoints() > 0 && getHitPoints() > 0)
 	{
-		std::cout << "ClapTrap " << getName() << " gets " << amount << " HitPoints" << std::endl;
+		std::cout << getName() << " gets " << amount << " HitPoints" << std::endl;
 		setHitPoints(getHitPoints() + amount);
 		setEnergyPoints(getEnergyPoints() - 1);
 	}

@@ -1,6 +1,11 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ClapTrap::ClapTrap(void)
+{
+
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "Constructor called" << std::endl;
@@ -12,7 +17,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &p)
 {
-	std::cout << "Copy constructeur colled" << std::endl;
+	std::cout << "Copy constructeur called" << std::endl;
 	*this = p;
 }
 
