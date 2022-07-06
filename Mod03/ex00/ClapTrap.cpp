@@ -79,7 +79,7 @@ void ClapTrap::attack(const std::string &target)
 		setEnergyPoints(getEnergyPoints() - 1);
 	}
 	else if (getEnergyPoints() <= 0 && getHitPoints() <= 0)
-		std::cout << "ClapTrap " << getName() << " can't attacks " << target << " because he have " << getEnergyPoints() << " EnergyPoints and " << getHitPoints() << "HitPoints" << std::endl;
+		std::cout << "ClapTrap " << getName() << " can't attacks " << target << " because he have " << getEnergyPoints() << " EnergyPoints and " << getHitPoints() << " HitPoints" << std::endl;
 	else if (getEnergyPoints() <= 0)
 		std::cout << "ClapTrap " << getName() << " can't attacks " << target << " because he have " << getEnergyPoints() << " EnergyPoints" << std::endl;
 	else if (getHitPoints() <= 0)
@@ -90,11 +90,8 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (getEnergyPoints() > 0 && getHitPoints() > 0)
-	{
 		setHitPoints(getHitPoints() - amount);
 		std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
-	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -106,11 +103,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 		setEnergyPoints(getEnergyPoints() - 1);
 	}
 	else if (getEnergyPoints() <= 0 && getHitPoints() <= 0)
-		std::cout << "ClapTrap " << getName() << " can't gets " << amount << "HitPoints because he have " << getEnergyPoints() << " EnergyPoints and " << getHitPoints() << "HitPoints" << std::endl;
+		std::cout << "ClapTrap " << getName() << " can't gets " << amount << " HitPoints because he have " << getEnergyPoints() << " EnergyPoints and " << getHitPoints() << " HitPoints" << std::endl;
 	else if (getEnergyPoints() <= 0)
-		std::cout << "ClapTrap " << getName() << " can't gets " << amount << "HitPoints because he have " << getEnergyPoints() << " EnergyPoints" << std::endl;
+		std::cout << "ClapTrap " << getName() << " can't gets " << amount << " HitPoints because he have " << getEnergyPoints() << " EnergyPoints" << std::endl;
 	else if (getHitPoints() <= 0)
-		std::cout << "ClapTrap " << getName() << " can't gets " << amount << "HitPoints because he have " << getHitPoints() << " Hitpoints" << std::endl;
+		std::cout << "ClapTrap " << getName() << " can't gets " << amount << " HitPoints because he have " << getHitPoints() << " Hitpoints" << std::endl;
 	else
 		std::cout << "No comprendo" << std::endl;
 }
