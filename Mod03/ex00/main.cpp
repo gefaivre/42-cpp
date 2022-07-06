@@ -12,7 +12,7 @@ int main()
 		recop.beRepaired(10);
 
 	}
-	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------------------" <<std::endl;
 	{
 		ClapTrap clapTrap("assign");
 		ClapTrap truc = clapTrap;
@@ -22,14 +22,14 @@ int main()
 		truc.beRepaired(10);
 
 	}
-	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------------------" <<std::endl;
 	{
 		ClapTrap clapTrap("Roger");
 		clapTrap.attack("Dov");
 		clapTrap.beRepaired(10);
 		std::cout << "Energie points: " << clapTrap.getEnergyPoints() << std::endl;
 	}
-	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------------------" <<std::endl;
 	{
 		ClapTrap clapTrap("Roky");
 		clapTrap.attack("Dov");
@@ -38,7 +38,7 @@ int main()
 		clapTrap.takeDamage(10);
 		clapTrap.attack("Dov");
 	}
-	std::cout << std::endl;
+	std::cout << "-----------------------------------------------------------------" <<std::endl;
 	{
 		ClapTrap clapTrap("Bob");
 		for (int i = 0; i < 11; i++)
