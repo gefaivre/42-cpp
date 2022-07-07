@@ -14,7 +14,6 @@ public:
 	Cat &operator=(const Cat &other);
 
 protected:
-	std::string type;
 
 };
 

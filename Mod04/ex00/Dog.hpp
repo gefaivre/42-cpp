@@ -14,7 +14,6 @@ public:
 	Dog &operator=(const Dog &other);
 
 protected:
-	std::string type;
 
 };
 
