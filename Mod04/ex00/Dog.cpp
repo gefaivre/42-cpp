@@ -1,14 +1,10 @@
 #include "Dog.hpp"
+#include "Animal.hpp"
 #include <iostream>
 
 Dog::Dog(void)
 {
 	std::cout << "Dog Default Constructor called" << std::endl;
-}
-
-Dog::Dog(std::string name)
-{
-	std::cout << "Dog Constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &p)

@@ -1,13 +1,13 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 #include <string>
+#include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
 
 public:
 	Dog(void);
-	Dog(std::string name);
 	Dog(const Dog &p);
 	~Dog(void);
 

@@ -6,11 +6,6 @@ Animal::Animal(void)
 	std::cout << "Animal Default Constructor called" << std::endl;
 }
 
-Animal::Animal(std::string name)
-{
-	std::cout << "Animal Constructor called" << std::endl;
-}
-
 Animal::Animal(const Animal &p)
 {
 	std::cout << "Animal Copy constructeur called" << std::endl;

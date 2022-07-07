@@ -1,14 +1,11 @@
 #include "Cat.hpp"
+#include "Animal.hpp"
 #include <iostream>
 
 Cat::Cat(void)
 {
 	std::cout << "Cat Default Constructor called" << std::endl;
-}
-
-Cat::Cat(std::string name)
-{
-	std::cout << "Cat Constructor called" << std::endl;
+	this->type = "Cat";
 }
 
 Cat::Cat(const Cat &p)

@@ -1,13 +1,13 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 #include <string>
+#include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
 
 public:
 	Cat(void);
-	Cat(std::string name);
 	Cat(const Cat &p);
 	~Cat(void);
 
