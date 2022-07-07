@@ -12,6 +12,10 @@ public:
 
 	Animal &operator=(const Animal &other);
 
+	std::string getType(void) const;
+
+	virtual void makeSound(void) const;
+
 
 
 protected:

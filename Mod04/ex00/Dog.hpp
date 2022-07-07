@@ -13,6 +13,8 @@ public:
 
 	Dog &operator=(const Dog &other);
 
+	void makeSound() const;
+
 protected:
 
 };

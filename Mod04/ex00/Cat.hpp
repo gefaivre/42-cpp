@@ -13,6 +13,8 @@ public:
 
 	Cat &operator=(const Cat &other);
 
+	void makeSound() const;
+
 protected:
 
 };

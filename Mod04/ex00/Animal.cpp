@@ -4,6 +4,7 @@
 Animal::Animal(void)
 {
 	std::cout << "Animal Default Constructor called" << std::endl;
+	this->type = "...";
 }
 
 Animal::Animal(const Animal &p)
@@ -23,3 +24,12 @@ Animal &Animal::operator=(const Animal &other)
 	return (*this);
 }
 
+std::string Animal::getType(void) const
+{
+	return (this->type);
+}
+
+void Animal::makeSound(void) const
+{
+	std::cout << "..." << std::endl;
+}

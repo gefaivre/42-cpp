@@ -5,6 +5,7 @@
 Dog::Dog(void)
 {
 	std::cout << "Dog Default Constructor called" << std::endl;
+	this->type = "Dog";
 }
 
 Dog::Dog(const Dog &p)
@@ -24,3 +25,7 @@ Dog &Dog::operator=(const Dog &other)
 	return (*this);
 }
 
+void Dog::makeSound(void) const
+{
+	std::cout << "Wouff" << std::endl;
+}

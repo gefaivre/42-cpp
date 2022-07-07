@@ -1,5 +1,4 @@
 #include "Cat.hpp"
-#include "Animal.hpp"
 #include <iostream>
 
 Cat::Cat(void)
@@ -23,5 +22,10 @@ Cat &Cat::operator=(const Cat &other)
 {
 	this->type = other.type;
 	return (*this);
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "Miaouww" << std::endl;
 }
 

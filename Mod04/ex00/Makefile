@@ -3,7 +3,9 @@ NAME= ex00
 SRC=	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
-		Cat.cpp
+		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongDog.cpp
 		
 
 CXX=c++
@@ -14,7 +16,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ)  Animal.hpp Cat.hpp Dog.hpp
+$(NAME): $(OBJ)  Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongDog.hpp
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
