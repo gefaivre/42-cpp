@@ -5,6 +5,8 @@ Cat::Cat(void)
 {
 	std::cout << "Cat Default Constructor called" << std::endl;
 	this->type = "Cat";
+	ideas = new Brain;
+
 }
 
 Cat::Cat(const Cat &p)

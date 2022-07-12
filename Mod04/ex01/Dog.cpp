@@ -6,6 +6,7 @@ Dog::Dog(void)
 {
 	std::cout << "Dog Default Constructor called" << std::endl;
 	this->type = "Dog";
+	ideas = new Brain;
 }
 
 Dog::Dog(const Dog &p)
