@@ -18,12 +18,9 @@ public:
 
 	std::string getName() const;
 	int getHitPoints() const;
-	void setHitPoints(int);
 	int getEnergyPoints() const;
-	void setEnergyPoints(int);
 	int getAttackDamage() const;
-	void setAttackDamage(int);
-
+	
 private:
 	std::string name;
 	int hitPoints;

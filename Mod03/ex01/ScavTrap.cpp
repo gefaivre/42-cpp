@@ -39,22 +39,22 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 void ScavTrap::guardGate(void)
 {
-	std::cout << getName() << " is now in Gate kepper mode" << std::endl; 
+	std::cout << this->name << " is now in Gate kepper mode" << std::endl; 
 }
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (getEnergyPoints() > 0 && getHitPoints() > 0)
+	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
-		std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
-		setEnergyPoints(getEnergyPoints() - 1);
+		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints -= 1;
 	}
-	else if (getEnergyPoints() <= 0 && getHitPoints() <= 0)
-		std::cout << "ScavTrap " << getName() << " can't attacks " << target << " because he have " << getEnergyPoints() << " EnergyPoints and " << getHitPoints() << "HitPoints" << std::endl;
-	else if (getEnergyPoints() <= 0)
-		std::cout << "ScavTrap " << getName() << " can't attacks " << target << " because he have " << getEnergyPoints() << " EnergyPoints" << std::endl;
-	else if (getHitPoints() <= 0)
-		std::cout << "ScavTrap " << getName() << " can't attacks " << target << " because he have " << getHitPoints() << " Hitpoints" << std::endl;
+	else if (this->energyPoints <= 0 && this->hitPoints <= 0)
+		std::cout << "ScavTrap " << this->name << " can't attacks " << target << " because he have " << this->energyPoints << " EnergyPoints and " << this->hitPoints << "HitPoints" << std::endl;
+	else if (this->energyPoints <= 0)
+		std::cout << "ScavTrap " << this->name << " can't attacks " << target << " because he have " << this->energyPoints << " EnergyPoints" << std::endl;
+	else if (this->hitPoints <= 0)
+		std::cout << "ScavTrap " << this->name << " can't attacks " << target << " because he have " << this->hitPoints << " Hitpoints" << std::endl;
 	else
 		std::cout << "No comprendo" << std::endl;
 }

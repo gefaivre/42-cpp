@@ -18,18 +18,15 @@ public:
 
 	std::string getName() const;
 	int getHitPoints() const;
-	void setHitPoints(int);
 	int getEnergyPoints() const;
-	void setEnergyPoints(int);
 	int getAttackDamage() const;
-	void setAttackDamage(int);
-
+	
 protected:
 	std::string name;
 	int hitPoints;
 	int energyPoints;
 	int attackDamage;
-
+	
 	ClapTrap(void);
 };
 
