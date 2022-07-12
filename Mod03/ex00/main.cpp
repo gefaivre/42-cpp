@@ -4,22 +4,14 @@
 int main()
 {
 	{
-		ClapTrap clapTrap("recop");
+		ClapTrap clapTrap("bibi");
 		ClapTrap recop(clapTrap);
 		for (int i = 0; i < 11; i++)
 			recop.beRepaired(1);
 		recop.takeDamage(20);
 		recop.beRepaired(10);
-
-	}
-	std::cout << "-----------------------------------------------------------------" <<std::endl;
-	{
-		ClapTrap clapTrap("assign");
-		ClapTrap truc = clapTrap;
-		for (int i = 0; i < 11; i++)
-			truc.beRepaired(1);
-		truc.takeDamage(20);
-		truc.beRepaired(10);
+		std::cout <<"claptrap EnergyPoints = "<< clapTrap.getEnergyPoints() << std::endl;
+		std::cout <<"recop EnergyPoints = "<< recop.getEnergyPoints() << std::endl;
 
 	}
 	std::cout << "-----------------------------------------------------------------" <<std::endl;
