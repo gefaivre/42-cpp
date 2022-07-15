@@ -12,12 +12,14 @@ Dog::Dog(void)
 Dog::Dog(const Dog &p)
 {
 	std::cout << "Dog Copy constructeur called" << std::endl;
+	this->ideas = p.ideas;
 	*this = p;
 }
 
 Dog::~Dog(void)
 {
 	std::cout << "Dog Default destructor called" << std::endl;
+	delete ideas;
 }
 
 Dog &Dog::operator=(const Dog &other)

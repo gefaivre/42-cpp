@@ -40,19 +40,26 @@ int main()
 		j->makeSound();
 		std::cout << "Animal Sound output = ";
 		meta->makeSound();
+
+		delete meta;
+		delete j;
+		delete i;
 	}
 
-	std::cout << "-----------------WRONGCLASS-------------------" << std::endl;
-
+	std::cout << "------------------------------------" << std::endl;
 	{
-		const WrongAnimal *meta = new WrongAnimal();
-		const WrongAnimal *j = new WrongDog();
-		std::cout << "WrongDog type output = " << j->getType() << std::endl;
-		std::cout << "Cat Sound output = ";
-		j->makeSound();
-		std::cout << "Animal Sound output = " ;
-		meta->makeSound();
-	}
+		Animal *tabAnimal[100];
+		for (int i = 0; i < 100; i++)
+		{
+			if (i < 50)
+				tabAnimal[i] = new Cat;
+			else
+				tabAnimal[i] = new Dog;
+		}
 
+
+		for(int i = 0; i < 100; i++)
+			delete tabAnimal[i];
+	}
 	return 0;
 }
