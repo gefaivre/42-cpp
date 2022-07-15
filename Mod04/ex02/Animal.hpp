@@ -6,8 +6,6 @@ class Animal
 {
 
 public:
-	Animal(void);
-	Animal(const Animal &p);
 	virtual ~Animal(void);
 
 	Animal &operator=(const Animal &other);
@@ -20,6 +18,10 @@ public:
 
 protected:
 	std::string type;
+	Animal(void);
+	Animal(const Animal &p);
+
+private:
 
 };
 
