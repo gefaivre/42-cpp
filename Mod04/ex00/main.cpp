@@ -7,7 +7,7 @@
 
 int main()
 {
-	{
+/* 	{
 		Animal animal;
 		Cat cat;
 		Dog dog;
@@ -24,7 +24,7 @@ int main()
 		dog.makeSound();
 
 		std::cout << "------------------------------------" << std::endl;
-	}
+	} */
 
 	std::cout << "------------------------------------" << std::endl;
 	{
@@ -39,7 +39,11 @@ int main()
 		std::cout << "Dog Sound output = ";
 		j->makeSound();
 		std::cout << "Animal Sound output = ";
-		meta->makeSound();
+		 meta->makeSound();
+
+		delete meta;
+		delete j;
+		delete i;
 	}
 
 	std::cout << "-----------------WRONGCLASS-------------------" << std::endl;
