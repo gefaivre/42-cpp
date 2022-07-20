@@ -11,7 +11,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ)  Bureaucrat.hpps
+$(NAME): $(OBJ)  Bureaucrat.hpp
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 
