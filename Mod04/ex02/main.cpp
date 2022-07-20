@@ -8,6 +8,7 @@
 int main()
 {
 	{
+		//Animal animal;
 		Cat cat;
 		Dog dog;
 		std::cout << "------------------------------------" << std::endl;

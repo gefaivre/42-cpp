@@ -16,9 +16,13 @@ public:
 
 	void makeSound() const;
 
+	void setBrain(std::string string, int nb);
+	std::string getBrain( int nb ) const ;
+
+
 protected:
 
-	Brain *ideas;
+	Brain *brain;
 
 
 };

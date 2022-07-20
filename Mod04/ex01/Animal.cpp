@@ -33,3 +33,5 @@ void Animal::makeSound(void) const
 {
 	std::cout << "..." << std::endl;
 }
+
+
