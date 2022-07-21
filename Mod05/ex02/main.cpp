@@ -1,16 +1,21 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 #include <iostream>
 
 int main( void )
 {
     try
     {
-        Form f("test", 4, 75);
-        Bureaucrat b("roger", 50);
-        std::cout << f << std::endl;
-        b.signForm(f);
-        std::cout << f << std::endl;
+        Form * test3 = new ShrubberyCreationForm("God");
+        Bureaucrat test("roger", 1);
+        std::cout << *test3 << std::endl;
+        //test.signForm(*test3);
+        test.executeForm(*test3);
+        std::cout << *test3 << std::endl;
 
     }
     catch(std::exception &e)

@@ -1,4 +1,5 @@
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 
@@ -34,4 +35,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     this->gradeForExec = other.gradeForExec;
 	this->isSigned = other.isSigned;
 	return (*this);
+}
+
+void PresidentialPardonForm::FormFunction() const
+{
+	std::cout << this->target << " Plsssssssss Pardon meeeeee (′ꈍᴗꈍ‵)" << std::endl;
 }

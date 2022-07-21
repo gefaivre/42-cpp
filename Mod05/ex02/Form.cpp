@@ -80,6 +80,22 @@ void Form::checkGrade() const
 		throw Form::tooLowExeption();
 }
 
+bool Form::execute(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > this->gradeForExec)
+		throw Form::GradeTooLowToExecException();
+	else if (!this->isSigned)
+		throw Form::FormNotSignedException();
+	else
+	{
+		std::cout << executor.getName() << " Executed " << this->name << std::endl;  
+		FormFunction();
+		return true;
+	}
+	return false;
+
+}
+
 std::ostream &	operator<<( std::ostream &os, Form const &p)
 {
 	os << "Form " << p.getName() << ": Exec "<< p.getGradeToExec() << ", Sign " << p.getGradeToSign() << ((p.getSignature()) ? "." : ". Not" ) << " Signed.";

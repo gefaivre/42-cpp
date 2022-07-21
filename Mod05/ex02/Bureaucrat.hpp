@@ -24,6 +24,8 @@ public:
 
 	bool signForm( Form &f) const ;
 
+	void executeForm(Form const & form);
+
 
 
 private:

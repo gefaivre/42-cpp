@@ -13,20 +13,20 @@ class Form
 public:
 	Form(const std::string  name, int gradeForSign, int gradeForExec);
 	Form(const Form &p);
-	virtual ~Form() = 0;
+	virtual ~Form();
 
-	Form &operator=(const Form &other);
+	virtual Form &operator=(const Form &other);
 
 	std::string getName() const ;
 	int getGradeToSign() const ;
 	int getGradeToExec() const ;
 	bool getSignature() const ;
 
-	virtual bool beSigned( const Bureaucrat &b);
+	bool beSigned( const Bureaucrat &b);
 
 
-
-	void execute(Bureaucrat const & executor) const;
+	bool execute(Bureaucrat const & executor) const;
+	virtual void FormFunction() const = 0;
 
 protected:
 
@@ -68,11 +68,23 @@ public:
 			return ("The Bureaucrat grade is too low to sign the Form");
 		}
 	};
-
-
+	class GradeTooLowToExecException : public std::exception
+	{
+		const char *  what() const throw()
+		{
+			return ("The Bureaucrat grade is too low to execute the Form");
+		}
+	};
+	class FormNotSignedException : public std::exception
+	{
+		const char *  what() const throw()
+		{
+			return ("The Bureaucrat Can't execute the form because the Form is not signed");
+		}
+	};
 
 };
 
-std::ostream &	operator<<( std::ostream &os, Form const &p);
+std::ostream	&operator<<( std::ostream &os, const Form &p);
 
 #endif

@@ -12,6 +12,7 @@ public:
 
     RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 
+    virtual void FormFunction() const;
 
 
 private:

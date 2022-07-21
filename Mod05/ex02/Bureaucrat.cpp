@@ -77,6 +77,12 @@ void Bureaucrat::checkGrade() const
 		throw Bureaucrat::tooLowExeption();
 }
 
+void Bureaucrat::executeForm(Form const & form)
+{
+	form.execute(*this);
+
+}
+
 std::ostream &	operator<<( std::ostream &os, Bureaucrat const &p)
 {
 	os << p.getName() << ", Bureaucrat grade " << p.getGrade();

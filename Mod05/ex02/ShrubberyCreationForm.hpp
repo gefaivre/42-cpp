@@ -3,11 +3,6 @@
 
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
-{
-
-};
-
 
 class ShrubberyCreationForm : public Form
 {
@@ -18,7 +13,7 @@ public:
 
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 
-
+    virtual void FormFunction() const;
 
 private:
     ShrubberyCreationForm();
