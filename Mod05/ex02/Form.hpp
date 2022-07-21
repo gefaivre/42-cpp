@@ -13,7 +13,7 @@ class Form
 public:
 	Form(const std::string  name, int gradeForSign, int gradeForExec);
 	Form(const Form &p);
-	~Form();
+	virtual ~Form() = 0;
 
 	Form &operator=(const Form &other);
 
@@ -22,10 +22,13 @@ public:
 	int getGradeToExec() const ;
 	bool getSignature() const ;
 
-    bool beSigned( const Bureaucrat &b);
+	virtual bool beSigned( const Bureaucrat &b);
 
 
-private:
+
+	void execute(Bureaucrat const & executor) const;
+
+protected:
 
 	const std::string	name;
     bool isSigned;
@@ -33,6 +36,7 @@ private:
 	int gradeForSign;
 	int gradeForExec;
 
+	std::string target;
 
 	static const int gradeMax = 1;
 	static const int gradeMin = 150;
