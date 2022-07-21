@@ -47,7 +47,7 @@ int main()
 	}
 
 	std::cout << "------------------------------------" << std::endl;
-	/* {
+	{
 		Animal *tabAnimal[100];
 		for (int i = 0; i < 100; i++)
 		{
@@ -60,10 +60,12 @@ int main()
 
 		for(int i = 0; i < 100; i++)
 			delete tabAnimal[i];
-	} */
+	}
 
+	std::cout << "------------------------------------" << std::endl;
 	Dog animal;
 	animal.setBrain("test", 0);
+	std::cout << animal.getBrain(0) << std::endl; 
 	{
 		Dog copy = animal;
 		std::cout << copy.getBrain(0) << std::endl; 

@@ -7,7 +7,7 @@
 
 int main()
 {
-/* 	{
+	{
 		Animal animal;
 		Cat cat;
 		Dog dog;
@@ -24,7 +24,7 @@ int main()
 		dog.makeSound();
 
 		std::cout << "------------------------------------" << std::endl;
-	} */
+	}
 
 	std::cout << "------------------------------------" << std::endl;
 	{
@@ -52,10 +52,12 @@ int main()
 		const WrongAnimal *meta = new WrongAnimal();
 		const WrongAnimal *j = new WrongDog();
 		std::cout << "WrongDog type output = " << j->getType() << std::endl;
-		std::cout << "Cat Sound output = ";
+		std::cout << "Dog Sound output = ";
 		j->makeSound();
 		std::cout << "Animal Sound output = " ;
 		meta->makeSound();
+		delete meta;
+		delete j;
 	}
 
 	return 0;
