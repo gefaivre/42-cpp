@@ -3,7 +3,9 @@
 
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
 
+class Form;
 
 class Bureaucrat
 {
@@ -19,6 +21,8 @@ public:
 
 	void upperGrade(int incrementValue);
 	void lowerGrade(int descrementValue);
+
+	bool signForm( Form &f) const ;
 
 
 

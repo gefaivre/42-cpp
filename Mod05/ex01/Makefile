@@ -1,7 +1,8 @@
 NAME= ex00
 
 SRC=	main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
 CXX=c++
 
@@ -11,7 +12,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ)  Bureaucrat.hpp
+$(NAME): $(OBJ)  Bureaucrat.hpp Form.hpp
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 

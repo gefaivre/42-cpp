@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat( void ):name(""), grade(1)
@@ -10,7 +11,7 @@ Bureaucrat::Bureaucrat( void ):name(""), grade(1)
 
 Bureaucrat::Bureaucrat( const std::string  name, int grade):name(name), grade(grade)
 {
-	std::cout << "Bureaucrat name and gsrades Constructor called" << std::endl;
+	std::cout << "Bureaucrat name and grades Constructor called" << std::endl;
 	checkGrade();
 
 }
@@ -54,6 +55,18 @@ void Bureaucrat::lowerGrade(int decrementValue)
 {
 	this->grade += decrementValue;
 	checkGrade();
+}
+
+bool Bureaucrat::signForm( Form &f) const
+{
+	if (f.beSigned( *this))
+	{
+		std::cout << this->name << " signed " << f.getName() << std::endl;
+		return true;
+	}
+	else
+		std::cout << this->name <<  " couldn’t sign " << f.getName() << " because his grade is too low." << std::endl;
+	return false;
 }
 
 void Bureaucrat::checkGrade() const
