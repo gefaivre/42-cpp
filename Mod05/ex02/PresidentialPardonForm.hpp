@@ -6,7 +6,7 @@
 class PresidentialPardonForm : public Form
 {
 public:
-    PresidentialPardonForm(const std::string target);
+    PresidentialPardonForm(const std::string &target);
     PresidentialPardonForm(const PresidentialPardonForm &f);
     ~PresidentialPardonForm();
 
