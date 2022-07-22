@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat( void ):name(""), grade(1)
 
 Bureaucrat::Bureaucrat( const std::string  name, int grade):name(name), grade(grade)
 {
-	std::cout << "Bureaucrat name and gsrades Constructor called" << std::endl;
+	std::cout << "Bureaucrat Constructor called" << std::endl;
 	checkGrade();
 
 }
