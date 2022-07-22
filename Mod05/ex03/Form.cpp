@@ -82,6 +82,7 @@ void Form::checkGrade() const
 
 bool Form::execute(Bureaucrat const &executor) const
 {
+
 	if (executor.getGrade() > this->gradeForExec)
 		throw Form::GradeTooLowToExecException();
 	else if (!this->isSigned)

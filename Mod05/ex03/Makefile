@@ -1,12 +1,12 @@
-NAME= ex02
+NAME= ex03
 
 SRC=	main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm.cpp
-
+		ShrubberyCreationForm.cpp \
+		Intern.cpp
 
 CXX=c++
 
@@ -16,7 +16,7 @@ OBJ=$(SRC:.c=.o)
 	
 all: $(NAME)
 
-$(NAME): $(OBJ)  Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+$(NAME): $(OBJ)  Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.cpp
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo [$(NAME)]: Created !
 

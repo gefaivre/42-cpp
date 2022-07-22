@@ -82,6 +82,13 @@ public:
 			return ("The Bureaucrat Can't execute the form because the Form is not signed");
 		}
 	};
+	class FormNotExist : public std::exception
+	{
+		const char *  what() const throw()
+		{
+			return ("The Intern is so useful, he literally create a black holl");
+		}
+	};
 
 };
 
