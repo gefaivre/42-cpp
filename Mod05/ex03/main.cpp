@@ -9,41 +9,40 @@
 
 int main(void)
 {
-    {
 
-        Form *test3 = new ShrubberyCreationForm("Garden");
+    Form *test = NULL;
+    {
+        std::cout << "---------Intern create a Form" << std::endl;
+        Intern titouan;
+        test = titouan.makeForm("shruberry creation", "kitchen");
         try
         {
-            Bureaucrat test("roger", 1);
-            std::cout << *test3 << std::endl;
-            // test.signForm(*test3);
-            test.executeForm(*test3);
-            std::cout << *test3 << std::endl;
-            delete test3;
-        }
-        catch (std::exception &e)
-        {
-
-            delete test3;
-            std::cout << e.what() << std::endl;
-        }
-    }
-
-    std::cout << "------------------------------------" << std::endl;
-
-    {
-        try
-        {
-            Form *test = NULL;
-            Intern titouan;
-            test = titouan.makeForm("shruberry creation", "kitchen");
             Bureaucrat hubert("hubert", 50);
             hubert.signForm(*test);
             hubert.executeForm(*test);
         }
         catch (std::exception &e)
         {
-
+            std::cout << e.what() << std::endl;
+        }
+        delete test;
+    }
+    std::cout << "------------------------------------" << std::endl;
+    {
+        std::cout << "----------sIntern failed Form" << std::endl;
+        Form *test = NULL;
+        try
+        {
+            Intern titouan;
+            test = titouan.makeForm("shrubsdfgerry creation", "kitchen");
+            Bureaucrat hubert("hubert", 50);
+            hubert.signForm(*test);
+            hubert.executeForm(*test);
+            delete test;
+        }
+        catch (std::exception &e)
+        {
+            delete test;
             std::cout << e.what() << std::endl;
         }
     }

@@ -35,5 +35,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::FormFunction() const
 {
+	std::cout << "***PresidentialPardonForm***" << std::endl;
 	std::cout << this->target << " Plsssssssss Pardon meeeeee (′ꈍᴗꈍ‵)" << std::endl;
+	std::cout << "****************************" << std::endl;
 }
