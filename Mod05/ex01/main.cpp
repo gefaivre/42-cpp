@@ -2,7 +2,7 @@
 #include "Form.hpp"
 #include <iostream>
 
-int main( void )
+int main(void)
 {
     try
     {
@@ -11,11 +11,10 @@ int main( void )
         std::cout << f << std::endl;
         b.signForm(f);
         std::cout << f << std::endl;
-
     }
-    catch(std::exception &e)
+    catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;       
+        std::cout << e.what() << std::endl;
     }
 
     return (0);

@@ -14,12 +14,8 @@ public:
 
     virtual void FormFunction() const;
 
-
 private:
     RobotomyRequestForm();
-
-
 };
-
 
 #endif

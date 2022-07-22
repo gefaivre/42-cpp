@@ -12,17 +12,10 @@ public:
 
     PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
-
     virtual void FormFunction() const;
-
-
-
 
 private:
     PresidentialPardonForm();
-
-
 };
-
 
 #endif

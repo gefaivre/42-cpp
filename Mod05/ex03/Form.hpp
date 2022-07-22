@@ -5,33 +5,30 @@
 #include <string>
 #include <stdexcept>
 
-
 class Bureaucrat;
 
 class Form
 {
 public:
-	Form(const std::string  name, int gradeForSign, int gradeForExec);
+	Form(const std::string name, int gradeForSign, int gradeForExec);
 	Form(const Form &p);
 	virtual ~Form();
 
 	virtual Form &operator=(const Form &other);
 
-	std::string getName() const ;
-	int getGradeToSign() const ;
-	int getGradeToExec() const ;
-	bool getSignature() const ;
+	std::string getName() const;
+	int getGradeToSign() const;
+	int getGradeToExec() const;
+	bool getSignature() const;
 
-	bool beSigned( const Bureaucrat &b);
+	bool beSigned(const Bureaucrat &b);
 
-
-	bool execute(Bureaucrat const & executor) const;
+	bool execute(Bureaucrat const &executor) const;
 	virtual void FormFunction() const = 0;
 
 protected:
-
-	const std::string	name;
-    bool isSigned;
+	const std::string name;
+	bool isSigned;
 
 	int gradeForSign;
 	int gradeForExec;
@@ -43,55 +40,53 @@ protected:
 
 	void checkGrade() const;
 
-	Form( void );
+	Form(void);
 
 public:
-
 	class tooHightExeption : public std::exception
 	{
-		const char * what() const throw()
+		const char *what() const throw()
 		{
 			return ("A Form grade is too Hight");
 		}
 	};
 	class tooLowExeption : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("A Form grade is too Low");
 		}
 	};
-    class GradeTooLowException : public std::exception
+	class GradeTooLowException : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("The Bureaucrat grade is too low to sign the Form");
 		}
 	};
 	class GradeTooLowToExecException : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("The Bureaucrat grade is too low to execute the Form");
 		}
 	};
 	class FormNotSignedException : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("The Bureaucrat Can't execute the form because the Form is not signed");
 		}
 	};
 	class FormNotExist : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("The Intern is so useful, he literally create a black holl");
 		}
 	};
-
 };
 
-std::ostream	&operator<<( std::ostream &os, const Form &p);
+std::ostream &operator<<(std::ostream &os, const Form &p);
 
 #endif

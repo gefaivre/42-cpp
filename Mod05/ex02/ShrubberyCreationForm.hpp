@@ -3,7 +3,6 @@
 
 #include "Form.hpp"
 
-
 class ShrubberyCreationForm : public Form
 {
 public:
@@ -17,7 +16,5 @@ public:
 
 private:
     ShrubberyCreationForm();
-
-
 };
 #endif

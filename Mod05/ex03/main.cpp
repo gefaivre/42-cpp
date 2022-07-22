@@ -16,7 +16,7 @@ int main(void)
         {
             Bureaucrat test("roger", 1);
             std::cout << *test3 << std::endl;
-            //test.signForm(*test3);
+            // test.signForm(*test3);
             test.executeForm(*test3);
             std::cout << *test3 << std::endl;
             delete test3;
@@ -36,7 +36,7 @@ int main(void)
         {
             Form *test = NULL;
             Intern titouan;
-            test = titouan.makeForm("shrubbeasdfry creation", "kitchen");
+            test = titouan.makeForm("shruberry creation", "kitchen");
             Bureaucrat hubert("hubert", 50);
             hubert.signForm(*test);
             hubert.executeForm(*test);

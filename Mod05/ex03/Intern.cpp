@@ -5,50 +5,45 @@
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
-Intern::Intern( void )
+Intern::Intern(void)
 {
-	std::cout << "Intern Default Constructor called" << std::endl;
+    std::cout << "Intern Default Constructor called" << std::endl;
 }
-
 
 Intern::Intern(const Intern &p)
 {
-	std::cout << "Intern Copy Constructor called" << std::endl;
-	*this = p;
-
+    std::cout << "Intern Copy Constructor called" << std::endl;
+    *this = p;
 }
 
 Intern::~Intern()
 {
-	std::cout << "Intern Default Destructor called" << std::endl;
-
+    std::cout << "Intern Default Destructor called" << std::endl;
 }
 
 Intern &Intern::operator=(const Intern &other)
 {
     (void)other;
-	return (*this);
+    return (*this);
 }
 
-
-std::ostream &	operator<<( std::ostream &os, Intern const &p)
+std::ostream &operator<<(std::ostream &os, Intern const &p)
 {
     (void)p;
-	os <<  "It's just an Intern";
-	return os;
+    os << "It's just an Intern";
+    return os;
 }
 
 Form *Intern::makeForm(const std::string &formName, const std::string &target)
 {
     Form *ret = NULL;
 
-    t_list form[] = 
-    {
-        {"presidential pardon", new PresidentialPardonForm(target)},
-        {"robotomy request", new RobotomyRequestForm(target)},
-        {"shruberry creation", new ShrubberyCreationForm(target)},
-        {"", NULL}
-    };
+    t_list form[] =
+        {
+            {"presidential pardon", new PresidentialPardonForm(target)},
+            {"robotomy request", new RobotomyRequestForm(target)},
+            {"shruberry creation", new ShrubberyCreationForm(target)},
+            {"", NULL}};
 
     for (int i = 0; form[i].type != NULL; i++)
     {
@@ -64,8 +59,5 @@ Form *Intern::makeForm(const std::string &formName, const std::string &target)
         return (ret);
     }
     else
-        throw( Form::FormNotExist());
-
+        throw(Form::FormNotExist());
 }
-
-

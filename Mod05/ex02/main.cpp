@@ -6,16 +6,16 @@
 
 #include <iostream>
 
-int main( void )
+int main(void)
 {
-   {
+    {
 
         Form *test3 = new ShrubberyCreationForm("Garden");
         try
         {
             Bureaucrat test("roger", 1);
             std::cout << *test3 << std::endl;
-            //test.signForm(*test3);
+            // test.signForm(*test3);
             test.executeForm(*test3);
             std::cout << *test3 << std::endl;
             delete test3;

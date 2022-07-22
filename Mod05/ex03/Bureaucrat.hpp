@@ -10,56 +10,50 @@ class Form;
 class Bureaucrat
 {
 public:
-	Bureaucrat(const std::string  name, int grade);
+	Bureaucrat(const std::string name, int grade);
 	Bureaucrat(const Bureaucrat &p);
 	~Bureaucrat();
 
 	Bureaucrat &operator=(const Bureaucrat &other);
 
-	std::string getName() const ;
-	int getGrade() const ;
+	std::string getName() const;
+	int getGrade() const;
 
 	void upperGrade(int incrementValue);
 	void lowerGrade(int descrementValue);
 
-	bool signForm( Form &f) const ;
+	bool signForm(Form &f) const;
 
-	void executeForm(Form const & form);
-
-
+	void executeForm(Form const &form);
 
 private:
-
-	const std::string	name;
-	int					grade;
+	const std::string name;
+	int grade;
 
 	static const int gradeMax = 1;
 	static const int gradeMin = 150;
 
 	void checkGrade() const;
 
-	Bureaucrat( void );
+	Bureaucrat(void);
 
 public:
-
 	class tooHightExeption : public std::exception
 	{
-		const char * what() const throw()
+		const char *what() const throw()
 		{
 			return ("The grade is too Hight");
 		}
 	};
 	class tooLowExeption : public std::exception
 	{
-		const char *  what() const throw()
+		const char *what() const throw()
 		{
 			return ("The grade is too Low");
 		}
 	};
-
-
 };
 
-std::ostream &	operator<<( std::ostream &os, Bureaucrat const &p);
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &p);
 
 #endif
