@@ -9,5 +9,10 @@ void identify(Base& p);
 
 int main(void)
 {
+    Base *test = generate();
+    identify(test);
+    identify(*test);
+    delete test;
+
     return 0;
 }
