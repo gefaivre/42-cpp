@@ -1,9 +1,11 @@
-NAME= Convert
+NAME= Cast_pointer
 
 SRC=	main.cpp \
-		Convert.cpp
+		Convert.cpp \
+		pointerFunction.cpp
 
-INC=	Convert.hpp
+INC=	Convert.hpp \
+		Data.hpp
 
 CXX=c++
 
