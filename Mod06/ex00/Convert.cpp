@@ -70,11 +70,11 @@ bool Convert::isSpecial()
 void Convert::checkFCara(unsigned long i)
 {
 	double tmp;
-			std::stringstream ss;
-			ss << stringToConvert.substr(0,i); // send it to the string stream
-			ss >> tmp;
-			if (tmp > std::numeric_limits<float>::max() || tmp < std::numeric_limits<float>::max())
-				throw Convert::UnknowFormatException();
+	std::stringstream ss;
+	ss << stringToConvert.substr(0,i); // send it to the string stream
+	ss >> tmp; 
+	if (tmp > std::numeric_limits<float>::max() || tmp < std::numeric_limits<float>::min())
+		throw Convert::UnknowFormatException();
 }
 
 
@@ -84,18 +84,9 @@ bool Convert::checkString()
 	bool point = false;
 	bool fLetter = false;
 
-	if (stringToConvert.empty())
-	{
-		throw Convert::UnknowFormatException();
-	}
-	if (stringToConvert[i] == '+' || stringToConvert[i] == '-')
-	{
-		i++;
-	}
-	while (i < stringToConvert.length() && std::isdigit(stringToConvert[i]))
-	{
-		i++;
-	}
+	if (stringToConvert.empty()) {throw Convert::UnknowFormatException();}
+	if (stringToConvert[i] == '+' || stringToConvert[i] == '-') {i++;}
+	while (i < stringToConvert.length() && std::isdigit(stringToConvert[i])) {i++;}
 	if (i < stringToConvert.length() && (stringToConvert[i] == '.' || stringToConvert[i] == 'f'))
 	{
 		if (stringToConvert[i] == '.') {point = true;}
@@ -106,22 +97,23 @@ bool Convert::checkString()
 		}
 		i++;
 	}
-	if (i < stringToConvert.length() && std::isdigit(stringToConvert[i]) == 0)
-		throw Convert::UnknowFormatException();
-	while (i < stringToConvert.length() && std::isdigit(stringToConvert[i]) && fLetter == false)
+	if (i < stringToConvert.length() && (std::isdigit(stringToConvert[i]) == 0 || (stringToConvert[i] == 'f' && fLetter == false)))
 	{
-		i++;
+		if (stringToConvert[i] == 'f')
+		{
+			fLetter = true;
+			i++;
+		}
+		else
+			throw Convert::UnknowFormatException();
 	}
-	
+	while (i < stringToConvert.length() && std::isdigit(stringToConvert[i]) && fLetter == false) {i++;}
 	if (i < stringToConvert.length() && fLetter == false && stringToConvert[i] == 'f')
 	{
 		checkFCara(i);
-
 		i++;
 	}
-	if (i < stringToConvert.length())
-		throw Convert::UnknowFormatException();
-
+	if (i < stringToConvert.length()) {throw Convert::UnknowFormatException();}
 	return (true);
 }
 
@@ -145,7 +137,7 @@ bool Convert::toChar() const
 	{
 		std::cout << "impossible" << std::endl;
 	}
-	if (_value <= 126 && _value >= 20)
+	if (_value <= 126 && _value >= 32)
 	{
 		std::cout << "'" << static_cast<char>(static_cast<int>(_value)) << "'" << std::endl;
 		return (1);
@@ -171,7 +163,9 @@ bool Convert::toFloat() const
 bool Convert::toDouble() const
 {
 	std::cout << _value ;
-	if (_value - static_cast<double>(_value) == 0.0)
+	if (_value - round(_value) == 0)
 		std::cout << ".0" << std::endl;
+	else
+		std::cout << std::endl;
 	return (1);
 }

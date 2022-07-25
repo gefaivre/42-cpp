@@ -11,6 +11,7 @@ int main(int ac, char **av)
         std::cout << "Usage : ./Convert [string]" << std::endl;
         return (1);
     }
+
     try
     {
         Convert conv(av[1]);
