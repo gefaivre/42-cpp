@@ -1,11 +1,9 @@
 NAME= Cast_pointer
 
 SRC=	main.cpp \
-		Convert.cpp \
 		pointerFunction.cpp
 
-INC=	Convert.hpp \
-		Data.hpp
+INC=	Data.hpp
 
 CXX=c++
 
