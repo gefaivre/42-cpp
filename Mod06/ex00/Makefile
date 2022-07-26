@@ -18,7 +18,7 @@ $(NAME): $(OBJ) $(INC)
 	@echo [$(NAME)]: Created !
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf *.o
 
 fclean:	clean
 	rm -rf $(NAME)
