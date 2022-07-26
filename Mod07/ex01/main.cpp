@@ -2,16 +2,19 @@
 #include <string>
 #include <iostream>
 
-
-void print(std::string  & string)
+template< typename T>
+void print(T  & toPrint)
 {
-    std::cout << string << std::endl;
+    std::cout << toPrint << std::endl;
 }
 
 int main( void )
 {
 
-    std::string test[5] = {"test1","test2","test3","test4","test5"};
+    std::string test_string[5] = {"test1","test2","test3","test4","test5"};
+    int test_int[5] = {1,2,3,4,5};
 
-    iter(test, 5, &print);
+    iter(test_string, 5, &print);
+
+    iter(test_int, 5, &print);
 }
