@@ -11,10 +11,9 @@ public:
         _tab = NULL;
         std::cout << "Void Array Constructor" << std::endl;
     }
-    Array(const unsigned int n): _size(n)
+    Array( unsigned int n): _tab(new T[n]()), _size(n)
     {
         std::cout << "Array[n] Constructor" << std::endl;
-        _tab = new T[n];
     }
     Array(const Array &p)
     {
@@ -33,7 +32,7 @@ public:
 	}
 	Array<T> &operator=(const Array<T> &other)
     {
-		_size = other.getSize();
+		_size = other._size;
 		_tab = new T[_size];
 		for (unsigned int i = 0; i < _size; i++)
 			_tab[i] = other[i];

@@ -2,7 +2,7 @@
 #include "Array.hpp"
 #include <cstdlib>
 
-#define MAX_VAL 750
+/* #define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -51,12 +51,11 @@ int main(int, char**)
     }
     delete [] mirror;
     return 0;
-}
+} */
 
-/* int main(void)
+int main(void)
 {
-    Array<int> numbers(45);
-    {
-        Array<int> test = numbers;
-    }
-}  */
+    Array<int> numbers(-45);
+    
+
+} 
