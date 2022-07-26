@@ -14,8 +14,6 @@ public:
     Array(const unsigned int n): _size(n)
     {
         std::cout << "Array[n] Constructor" << std::endl;
-        if (_size < 0)
-			throw std::overflow_error("Bad index at creation");
         _tab = new T[n];
     }
     Array(const Array &p)
