@@ -20,9 +20,9 @@ Convert::Convert(const char *string) : stringToConvert(string)
 		{
 			checkString();
 			std::stringstream ss;
-			ss << stringToConvert; // send it to the string stream
+			ss << stringToConvert;
 
-			if (!(ss >> _value)) // send it to a double, test for correctness
+			if (!(ss >> _value))
 			{
 				throw Convert::UnknowFormatException();
 			}
@@ -71,7 +71,7 @@ void Convert::checkFCara(unsigned long i)
 {
 	double tmp;
 	std::stringstream ss;
-	ss << stringToConvert.substr(0,i); // send it to the string stream
+	ss << stringToConvert.substr(0,i);
 	ss >> tmp; 
 	if (tmp > std::numeric_limits<float>::max() || tmp < std::numeric_limits<float>::min())
 		throw Convert::UnknowFormatException();
