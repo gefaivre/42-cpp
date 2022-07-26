@@ -22,9 +22,12 @@ int main( void )
 	data->number = 42;
 
 
-    std::cout << "**Serialize/Deserialize***" << std::endl << std::endl;
-
+    std::cout << "***Serialize***" << std::endl;
 	raw = serialize(data);
+	std::cout << "raw = " << raw << std::endl << std::endl;
+
+
+    std::cout << "***Deserialize***" << std::endl << std::endl;
 	new_data = deserialize(raw);
 
     std::cout << "New_data :" << std::endl;
