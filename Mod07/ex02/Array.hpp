@@ -7,9 +7,9 @@ class Array
 public:
     Array()
     {
+        std::cout << "Void Array Constructor" << std::endl;
         _size = 0;
         _tab = NULL;
-        std::cout << "Void Array Constructor" << std::endl;
     }
     Array( unsigned int n): _tab(new T[n]()), _size(n)
     {

@@ -1,4 +1,4 @@
-NAME= 	array
+NAME= 	Array
 
 SRC=	main.cpp
 
