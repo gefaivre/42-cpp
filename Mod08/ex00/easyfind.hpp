@@ -13,5 +13,14 @@ typename T::iterator easyfind(T &tab, const int n)
 
 }
 
+/* template<typename T>
+typename T::iterator easyfind(T &tab, const int n)
+{
+	typename T::iterator	result = find(tab.begin(), tab.end(), n);
+	if (result == tab.end())
+		return tab.end();
+	return result;
+}
+ */
 
 #endif
