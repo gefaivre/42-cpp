@@ -1,6 +1,7 @@
 NAME= Span
 
-SRC=	main.cpp 
+SRC=	main.cpp \
+		Span.cpp
 
 INC=	Span.hpp
 
