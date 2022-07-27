@@ -1,12 +1,12 @@
 NAME= easyfind
 
-SRC=	main.cpp \
+SRC=	main.cpp 
 
-INC=	whatever.hpp \
+INC=	easyfind.hpp 
 
 CXX=c++
 
-CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 
 OBJ=$(SRC:.c=.o)
 	
